@@ -1,0 +1,9 @@
+nano ~/.config/autostart/firefox-kiosk.desktop
+
+[Desktop Entry]
+Type=Application
+Exec=firefox --kiosk https://cure-energy-54986886.figma.site/
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=Firefox Kiosk
+Comment=Start Firefox in kiosk mode at boot
