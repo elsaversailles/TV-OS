@@ -7,3 +7,23 @@ Hidden=false
 X-GNOME-Autostart-enabled=true
 Name=Firefox Kiosk
 Comment=Start Firefox in kiosk mode at boot
+
+
+
+nano ~/.config/systemd/user/firefox-kiosk.service
+
+[Unit]
+Description=Firefox Kiosk
+After=graphical.target
+
+[Service]
+ExecStart=/usr/bin/firefox --kiosk https://cure-energy-54986886.figma.site/
+Restart=always
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/tvos-virtualbox/.Xauthority
+
+[Install]
+WantedBy=default.target
+
+systemctl --user enable firefox-kiosk.service
+systemctl --user start firefox-kiosk.service
